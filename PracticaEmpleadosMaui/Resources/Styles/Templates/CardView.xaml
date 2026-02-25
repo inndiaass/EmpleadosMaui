@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PracticaMaui.Resources.Styles.Templates.CardView"
+             x:Name="this"
+            >
+    
+    <Border BindingContext="{x:Reference this}"
+            BackgroundColor="{Binding CardColor}"
+            Stroke="{Binding BorderColor}"
+            >
+        <Grid ColumnDefinitions="100, *" RowDefinitions="Auto, Auto, Auto, Auto">
+
+            <Border Grid.RowSpan="4" Grid.Column="0"
+                    HeightRequest="80" WidthRequest="80"
+                    StrokeShape="RoundRectangle 40"
+                    Stroke="{Binding BorderColor}"
+                    VerticalOptions="Center" Margin="0,0,15,0">
+                <Image Aspect="AspectFill"
+                       HeightRequest="80" 
+                       WidthRequest="80">   
+                    <Image.Source>
+                        <UriImageSource Uri="{Binding ImageUrl}"
+                        CacheValidity="10:00:00:00" />
+                    </Image.Source>
+                </Image>
+            </Border>
+
+            <Label Grid.Row="0" Grid.Column="1"
+                   Text="{Binding Nombre}"
+                   FontSize="18" FontAttributes="Bold"
+                   TextColor="Black" />
+
+            <Label Grid.Row="1" Grid.Column="1"
+                   Text="{Binding Apellidos}"
+                   FontSize="16"
+                   TextColor="#333333" />
+
+            <Label Grid.Row="2" Grid.Column="1" 
+                   Text="{Binding NombreDpto}" 
+                   FontSize="14" FontAttributes="Italic"
+                   TextColor="Gray" />
+
+            <HorizontalStackLayout Grid.Row="3" Grid.Column="1" Spacing="12" Margin="0,5,0,0">
+                <Label Text="Detalles..."
+                       TextColor="Black"
+                       TextDecorations="Underline">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnLinkDetailtapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </HorizontalStackLayout>
+        </Grid>
+    </Border>
+</ContentView>

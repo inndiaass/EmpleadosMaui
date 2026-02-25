@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PracticaMaui.Views.DepartmentCreate"
+             Title="Nuevo Departamento">
+
+    <VerticalStackLayout Padding="20" Spacing="12">
+        <Entry Text="{Binding Department.Name}" Placeholder="Nombre" />
+        <Entry Text="{Binding Department.ImageUrl}" Placeholder="https://..." />
+
+        <HorizontalStackLayout Spacing="12">
+            <Button Text="Guardar" Command="{Binding SaveCommand}" />
+            <Button Text="Cancelar" Command="{Binding CancelCommand}" />
+        </HorizontalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>

@@ -1,0 +1,10 @@
+# Normalize line endings
+auto eol=lf
+* text=auto
+
+# Windows scripts
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Visual Studio solution
+*.sln text eol=crlf

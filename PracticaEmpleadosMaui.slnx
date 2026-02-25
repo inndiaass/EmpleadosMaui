@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="PracticaEmpleadosMaui/PracticaMaui.csproj">
+    <Deploy Solution="Debug|*" />
+  </Project>
+</Solution>

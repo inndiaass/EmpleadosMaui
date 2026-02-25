@@ -1,0 +1,53 @@
+# Build results
+bin/
+obj/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Rider / VS Code
+.idea/
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# MAUI / Xamarin
+*.apk
+*.aab
+*.app
+*.appx
+*.appxbundle
+*.msix
+*.msixbundle
+*.pdb
+
+# NuGet
+*.nupkg
+# The packages folder can be ignored because of PackageReference
+# Uncomment if you use packages.config
+# packages/
+
+# Logs
+*.log
+
+# Temporary
+*.tmp
+*.temp
+*.swp
+
+# Coverage
+TestResults/
+*.coverage
+*.coveragexml
+
+# Publish
+publish/
+
+# Local settings
+appsettings.Development.json

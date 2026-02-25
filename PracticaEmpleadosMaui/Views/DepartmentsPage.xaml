@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PracticaMaui.Views.DepartmentsPage"
+             xmlns:templates="clr-namespace:PracticaMaui.Resources.Styles.Templates"
+             Title="Directorio de Departamentos">
+
+    <VerticalStackLayout>
+        <Button Text="Agregar"
+                HorizontalOptions="End"
+                Margin="15,10"
+                Clicked="OnAddDepartmentClicked" />
+
+        <CollectionView ItemsSource="{Binding Departments}"
+                        SelectionMode="None">
+
+        <CollectionView.ItemsLayout>
+            <LinearItemsLayout Orientation="Vertical" ItemSpacing="12" />
+        </CollectionView.ItemsLayout>
+
+        <CollectionView.ItemTemplate>
+            <DataTemplate>
+                <ContentView Padding="15,5">
+                    <templates:CardView 
+                        Nombre="{Binding Name}" 
+                        CardColor="White"
+                        BorderColor="#E0E0E0"/>
+                </ContentView>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+
+        </CollectionView>
+    </VerticalStackLayout>
+</ContentPage>

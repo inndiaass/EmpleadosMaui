@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PracticaMaui.Views.EmployeeDeletePage"
+             Title="Eliminar Empleado">
+    <VerticalStackLayout Padding="24" Spacing="16">
+        <Label Text="Confirmar eliminacion"
+               FontSize="22"
+               FontAttributes="Bold"
+               TextColor="#212121" />
+
+        <Label Text="Estas seguro de eliminar este empleado?"
+               FontSize="16"
+               TextColor="#424242" />
+
+        <Frame BackgroundColor="#F5F5F7" BorderColor="#E0E0E0" CornerRadius="12">
+            <VerticalStackLayout Spacing="6">
+                <Label Text="{Binding Employee.Name}"
+                       FontSize="18"
+                       FontAttributes="Bold"
+                       TextColor="#212121" />
+                <Label Text="{Binding Employee.LastName}"
+                       FontSize="16"
+                       TextColor="#424242" />
+                <Label Text="{Binding Employee.Gmail}"
+                       FontSize="14"
+                       TextColor="#616161" />
+            </VerticalStackLayout>
+        </Frame>
+
+        <HorizontalStackLayout Spacing="12">
+            <Button Text="Cancelar"
+                    Command="{Binding CancelCommand}"
+                    HorizontalOptions="FillAndExpand" />
+            <Button Text="Eliminar"
+                    BackgroundColor="#D32F2F"
+                    TextColor="White"
+                    Clicked="OnDeleteClicked"
+                    HorizontalOptions="FillAndExpand" />
+        </HorizontalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>

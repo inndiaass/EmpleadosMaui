@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PracticaMaui.Views.EmployeeCreate"
+             Title="Nuevo Empleado">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="12">
+
+            <Label Text="Nombre" />
+            <Entry Text="{Binding Employee.Name}" Placeholder="Nombre" />
+
+            <Label Text="Apellidos" />
+            <Entry Text="{Binding Employee.LastName}" Placeholder="Apellidos" />
+
+            <Label Text="Edad" />
+            <Entry Text="{Binding Employee.Edad}" Keyboard="Numeric" Placeholder="Edad" />
+
+            <Label Text="Correo" />
+            <Entry Text="{Binding Employee.Gmail}" Keyboard="Email" Placeholder="correo@dominio.com" />
+
+            <Label Text="Foto (URL)" />
+            <Entry Text="{Binding Employee.ImageUrl}" Placeholder="https://..." />
+
+            <Label Text="Departamento" />
+            <Picker ItemsSource="{Binding Departments}"
+                    ItemDisplayBinding="{Binding Name}"
+                    SelectedItem="{Binding SelectedDepartment}" />
+
+            <HorizontalStackLayout Spacing="12" HorizontalOptions="End">
+                <Button Text="Cancelar" Command="{Binding CancelCommand}" />
+                <Button Text="Guardar" Command="{Binding SaveCommand}" />
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

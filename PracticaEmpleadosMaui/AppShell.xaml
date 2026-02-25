@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="PracticaMaui.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:PracticaMaui"
+    xmlns:views="clr-namespace:PracticaMaui.Views"
+    Title="PracticaMaui" 
+    Shell.BackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Black}}"
+   Shell.ForegroundColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}"
+   Shell.TitleColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}">
+
+
+    <!-- Bindar los titulos a un diccionario de recursos para poder cambiar el idioma -->
+
+    <FlyoutItem Title="Employees">
+        <Tab Title="Employees">
+            <ShellContent ContentTemplate="{DataTemplate views:EmployeesPage}" />
+        </Tab>
+
+    </FlyoutItem>
+
+    <FlyoutItem Title="Departments">
+        <Tab Title="Departments">
+            <ShellContent ContentTemplate="{DataTemplate views:DepartmentsPage}" />
+        </Tab>
+
+    </FlyoutItem>
+
+    <FlyoutItem Title="Grafica">
+        <Tab Title="Grafica">
+            <ShellContent ContentTemplate="{DataTemplate views:GraficaPage}" />
+        </Tab>
+
+    </FlyoutItem>
+
+    <FlyoutItem Title="Settings">
+        <Tab Title="Settings">
+            <ShellContent ContentTemplate="{DataTemplate views:SettingsPage}" />
+        </Tab>
+
+    </FlyoutItem>
+</Shell>

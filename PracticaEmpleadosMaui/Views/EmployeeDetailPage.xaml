@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PracticaMaui.Views.EmployeeDetailPage"
+             Title="Perfil del Empleado"
+             BackgroundColor="#F5F5F7">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="0">
+
+            <BoxView HeightRequest="150" Color="#2B3A67" />
+
+            <VerticalStackLayout Spacing="15" Padding="30" Margin="0,-60,0,0">
+
+                <Frame CornerRadius="60" 
+                       HeightRequest="120" 
+                       WidthRequest="120" 
+                       Padding="0" 
+                       IsClippedToBounds="True"
+                       HorizontalOptions="Center"
+                       BorderColor="White"
+                       HasShadow="True">
+                    <Image Aspect="AspectFill">
+                        <Image.Source>
+                            <UriImageSource Uri="{Binding Employee.ImageUrl}"
+                                            CacheValidity="10:00:00:00" />
+                        </Image.Source>
+                    </Image>
+                </Frame>
+
+                <VerticalStackLayout Spacing="5" HorizontalOptions="Center">
+                    <Label Text="{Binding Employee.Name}" 
+                           FontSize="32" 
+                           FontAttributes="Bold" 
+                           TextColor="#212121"
+                           HorizontalTextAlignment="Center" />
+
+                    <Label Text="{Binding Employee.LastName}" 
+                           FontSize="20" 
+                           TextColor="#616161"
+                           HorizontalTextAlignment="Center" />
+                </VerticalStackLayout>
+
+                <VerticalStackLayout Spacing="4" HorizontalOptions="Center">
+                    <Label Text="{Binding Employee.Gmail}"
+                           FontSize="14"
+                           TextColor="#424242"
+                           HorizontalTextAlignment="Center" />
+
+                    <Label Text="{Binding Employee.Edad, StringFormat='Edad: {0}'}"
+                           FontSize="14"
+                           TextColor="#424242"
+                           HorizontalTextAlignment="Center" />
+                </VerticalStackLayout>
+
+                <Frame BackgroundColor="#E3F2FD" 
+                       BorderColor="#2196F3" 
+                       Padding="10,5" 
+                       CornerRadius="20" 
+                       HorizontalOptions="Center">
+                    <Label Text="{Binding DepartmentAsociado.Name}" 
+                           FontSize="14" 
+                           FontAttributes="Bold"
+                           TextColor="#1976D2"
+                           CharacterSpacing="1"/>
+                </Frame>
+
+                <BoxView HeightRequest="1" Color="#E0E0E0" Margin="0,10" />
+
+                <HorizontalStackLayout Spacing="12" HorizontalOptions="Center">
+                    <Button Text="Editar"
+                            Clicked="OnEditClicked" />
+                    <Button Text="Eliminar"
+                            BackgroundColor="#D32F2F"
+                            TextColor="White"
+                            Clicked="OnDeleteClicked" />
+                </HorizontalStackLayout>
+
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

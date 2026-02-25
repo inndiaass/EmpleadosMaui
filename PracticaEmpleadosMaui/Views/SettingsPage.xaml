@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PracticaMaui.Views.SettingsPage"
+             Title="Configuración">
+
+    <VerticalStackLayout Padding="20" Spacing="15" VerticalOptions="Start">
+
+        <Label 
+            Text="Tema de la aplicación" 
+            FontSize="Medium" 
+            FontAttributes="Bold" />
+
+        <Picker x:Name="ThemePicker" 
+                Title="Selecciona un tema"
+                SelectedIndexChanged="OnThemeChanged" 
+                HorizontalOptions="Fill">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Sistema</x:String>
+                    <x:String>Claro</x:String>
+                    <x:String>Oscuro</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+
+        <Label 
+            Text="Elige el tema de la aplicacion." 
+            FontSize="Small" 
+            TextColor="Gray" />
+
+    </VerticalStackLayout>
+</ContentPage>
