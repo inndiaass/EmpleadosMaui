@@ -8,7 +8,7 @@ Aplicación .NET MAUI para gestionar empleados y departamentos, consumiendo una 
 - Gráfica circular con cantidad de empleados por departamento.
 - Pantalla de configuración para cambiar el tema (Sistema/Claro/Oscuro).
 
-## Stack
+## Tecnologías utilizadas
 - .NET MAUI (proyecto único multi-plataforma).
 - MVVM con CommunityToolkit.Mvvm.
 - LiveChartsCore + SkiaSharp para gráficas.
@@ -35,11 +35,20 @@ dotnet run -f net10.0-windows10.0.19041.0
 ```
 
 ## Estructura del proyecto
-- `PracticaEmpleadosMaui/Models`: entidades `Employee` y `Department`.
-- `PracticaEmpleadosMaui/Service`: servicios de consumo REST.
-- `PracticaEmpleadosMaui/ViewModels`: lógica de presentación y comandos.
-- `PracticaEmpleadosMaui/Views`: pantallas XAML.
-- `PracticaEmpleadosMaui/Resources`: estilos, fuentes e imágenes.
+
+```
+PracticaEmpleadosMaui/
+  Models/          # Entidades (Employee, Department)
+  Service/         # Servicios de consumo REST
+  ViewModels/      # Lógica de presentación y comandos
+  Views/           # Pantallas XAML
+  Resources/       # Estilos, fuentes e imágenes
+  Platforms/       # Configuración específica por plataforma
+  App.xaml
+  AppShell.xaml
+  MauiProgram.cs
+  PracticaMaui.csproj
+```
 
 ## Notas
 - La gráfica usa los datos de empleados y departamentos para agrupar por `DepartmentId`.
